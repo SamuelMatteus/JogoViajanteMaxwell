@@ -2,10 +2,7 @@ import java.util.*;
 
 class Main {
   public static void main(String[] args) {
-      System.out.println("\nJorat: \n" +
-              "\n" +
-              "- Olá Maxwell, seja bem vindo a essa incrível jornada!" +
-              " Precisamos da sua ajuda para a Jóia chegar até Nargumun!\n");
+      System.out.println("\nJorat: \n\n- Olá Maxwell, seja bem vindo a essa incrível jornada! Precisamos da sua ajuda para a Jóia chegar até Nargumun!\n");
 
       //Cria as cidades do Mapa
     Cidade ubud = new Cidade("Ubud");
