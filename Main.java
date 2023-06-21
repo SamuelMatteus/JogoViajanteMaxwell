@@ -156,20 +156,24 @@ class Main {
                 System.out.println("Fim de jogo!");
                 break;
             }
-            if (poderJoia > 7) {
-                System.out.println("A jóia ultrapassou o limite máximo de poder, você morreu! ");
-                break;
-            }
 
-            // Viajar para a cidade escolhida
+            // Viaja entre cidades, executa o pagamento da moeda e alteração do poder da Jóia.
             cidadeAtual = cidadeEscolhida.destino;
             dinheiro -= cidadeEscolhida.moedasDeTransporte;
             poderJoia += cidadeEscolhida.poderDaJoia;
             cidadesVisitadas.add(cidadeAtual);
 
+            if (poderJoia < 0) {
+                poderJoia = 0;
+            }
+            if (poderJoia > 7) {
+                System.out.println("A jóia ultrapassou o limite máximo de poder, você morreu! ");
+                break;
+            }
+
 
             System.out.println("------------------------------------------------------");
-            System.out.println("Viajando para a cidade " + cidadeAtual.nome);
+            System.out.println("Viajando para: " + cidadeAtual.nome);
             System.out.println("Alteração do nível da jóia para: " + poderJoia);
             System.out.println("------------------------------------------------------");
         }
