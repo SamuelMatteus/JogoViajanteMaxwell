@@ -102,7 +102,7 @@ class Main {
       nargumun.adicionarLigacao(aymarLeague,1,1);
       nargumun.adicionarLigacao(bun,1,5);
 
-    // Executor do jogo
+    // Executor do jogo, com os valores iniciais
     jogarJogo(ubud, 3,0);
   }
 
@@ -136,7 +136,7 @@ class Main {
                 System.out.println((i + 1) + ". Cidade " + viagem.destino.nome);
             }
 
-            // Obter a escolha do jogador
+            // Recebe a escolha de viagem do jogador
             Scanner scanner = new Scanner(System.in);
             int escolha = scanner.nextInt();
 
@@ -163,6 +163,7 @@ class Main {
             poderJoia += cidadeEscolhida.poderDaJoia;
             cidadesVisitadas.add(cidadeAtual);
 
+            //Confere a cada viagem as alterações do poder da Jóia:
             if (poderJoia < 0) {
                 poderJoia = 0;
             }
@@ -170,7 +171,6 @@ class Main {
                 System.out.println("A jóia ultrapassou o limite máximo de poder, você morreu! ");
                 break;
             }
-
 
             System.out.println("------------------------------------------------------");
             System.out.println("Viajando para: " + cidadeAtual.nome);
