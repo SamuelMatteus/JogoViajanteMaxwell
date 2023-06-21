@@ -123,7 +123,7 @@ class Main {
             System.out.println("-------------------------------------------");
 
             //Analista as cidades vizinhas e encerra o jogo se o usuário desejar viajar sem moedas.
-            List<Fronteiras> ligacoes = cidadeAtual.ligacoes;
+            List<Fronteiras> ligacoes = cidadeAtual.limites;
             if (ligacoes.isEmpty()) {
                 System.out.println("Você não pode viajar para nenhuma cidade. Fim de jogo!");
                 break;
