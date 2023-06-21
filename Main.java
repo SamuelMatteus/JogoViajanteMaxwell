@@ -175,9 +175,9 @@ class Main {
         }
 
         // Exibir informações finais do jogo
-        System.out.println("Cidades visitadas:");
+        System.out.println("Você passou pelas seguintes cidades:\n");
         for (Cidade cidade : cidadesVisitadas) {
-            System.out.print(cidade.nome + " -> ");
+            System.out.print(cidade.nome + " | ");
         }
         System.out.println("Fim");
         System.out.println("Total gasto: " + (dinheiroInicial - dinheiro));
