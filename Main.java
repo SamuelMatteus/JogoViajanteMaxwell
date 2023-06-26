@@ -1,9 +1,7 @@
 import java.util.*;
-
 class Main {
   public static void main(String[] args) {
-      System.out.println("\nJorat: \n\n- Olá Maxwell, seja bem vindo a essa incrível jornada! Precisamos da sua ajuda para a Jóia chegar até Nargumun!\n");
-
+      System.out.println("\nJorat: \n\n- Olá Maxwell, seja bem vindo a essa incrível jornada! Precisamos da sua ajuda para a Jóia chegar até Nargumun!");
       //Cria as cidades do Mapa
     Cidade ubud = new Cidade("Ubud");
     Cidade kingdomOfLegmod = new Cidade("Kingdom Of Legmod");
@@ -105,7 +103,6 @@ class Main {
     // Executor do jogo, com os valores iniciais
     jogarJogo(ubud, 3,0);
   }
-
   public static void jogarJogo(Cidade cidadeInicial, int dinheiroInicial,int poderDaJoiaInicial) {
         Cidade cidadeAtual = cidadeInicial;
         int dinheiro = dinheiroInicial;
@@ -114,39 +111,32 @@ class Main {
 
         System.out.println("- Vamos lá! Para começar, receba essas " + dinheiroInicial +
                 " de transporte, use-as de maneira sábia!");
-
         while (true) {
-            System.out.println("-------------------------------------------");
+            System.out.println("------------------------------------------------------");
             System.out.println("Você está em: " + cidadeAtual.nome);
             System.out.println("Você possui " + dinheiro + " moedas de transporte disponíveis.");
             System.out.println("O nível da jóia está em " + poderJoia + ".");
-            System.out.println("-------------------------------------------");
+            System.out.println("------------------------------------------------------");
 
-            //Analista as cidades vizinhas e encerra o jogo se o usuário desejar viajar sem moedas.
+            //Analisa as cidades vizinhas e encerra o jogo se o usuário desejar viajar sem moedas.
             List<Fronteiras> ligacoes = cidadeAtual.limites;
             if (ligacoes.isEmpty()) {
                 System.out.println("Você não pode viajar para nenhuma cidade. Fim de jogo!");
                 break;
             }
-
             System.out.println("Opções de cidades para viajar:");
-
             for (int i = 0; i < ligacoes.size(); i++) {
                 Fronteiras viagem = ligacoes.get(i);
                 System.out.println((i + 1) + ". Cidade " + viagem.destino.nome);
             }
-
             // Recebe a escolha de viagem do jogador
             Scanner scanner = new Scanner(System.in);
             int escolha = scanner.nextInt();
-
             // Local de conversa com o mercador
             if (escolha < 1 || escolha > ligacoes.size()) {
                 System.out.println("Escolha inválida");
                 continue;
-              //inserir conversa do mercador
             }
-
             //Cidade que o jogador escolhe:
             Fronteiras cidadeEscolhida = ligacoes.get(escolha - 1);
 
@@ -156,28 +146,27 @@ class Main {
                 System.out.println("Fim de jogo!");
                 break;
             }
-
             // Viaja entre cidades, executa o pagamento da moeda e alteração do poder da Jóia.
             cidadeAtual = cidadeEscolhida.destino;
             dinheiro -= cidadeEscolhida.moedasDeTransporte;
             poderJoia += cidadeEscolhida.poderDaJoia;
             cidadesVisitadas.add(cidadeAtual);
+           
 
             //Confere a cada viagem as alterações do poder da Jóia:
             if (poderJoia < 0) {
                 poderJoia = 0;
             }
-            if (poderJoia > 7) {
-                System.out.println("A jóia ultrapassou o limite máximo de poder, você morreu! ");
+            if (poderJoia > 8) {
+                System.out.println("A jóia ultrapassou o limite máximo de poder, você morreu!\n");
                 break;
             }
-
             System.out.println("------------------------------------------------------");
             System.out.println("Viajando para: " + cidadeAtual.nome);
             System.out.println("Alteração do nível da jóia para: " + poderJoia);
             System.out.println("------------------------------------------------------");
-        }
 
+        }
         // Exibir informações finais do jogo
         System.out.println("Você passou pelas seguintes cidades:\n");
         for (Cidade cidade : cidadesVisitadas) {
