@@ -165,7 +165,7 @@ class Main {
                     System.out.println("Por aceitar, receba essas 4 moedas!");
                     int moedasAceitarMissao = 4;
                     dinheiro = dinheiro + moedasAceitarMissao;
-                    System.out.println("Seu novo saldo é de :" + dinheiro + " moedas.");
+                    System.out.println("Seu novo saldo é de : " + dinheiro + " moedas.");
                 }
 
                 //Confere a cada viagem as alterações do poder da Jóia:
@@ -177,15 +177,7 @@ class Main {
                     break;
                 }
             }
-            // Exibir informações finais do jogo
-//            System.out.println("Você passou pelas seguintes cidades:\n");
-//            for (Cidade cidade : cidadesVisitadas) {
-//                System.out.print(cidade.nome + " | ");
-//            }
-//            System.out.println("Fim");
-//            System.out.println("Total gasto: " + (dinheiroInicial - dinheiro));
-//            System.out.println("Última cidade visitada: " + cidadeAtual.nome);
-        }
 
+        }
     }
 }
