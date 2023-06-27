@@ -102,7 +102,7 @@ class Main {
         nargumun.adicionarLigacao(bun, 1, 5);
 
         // Executor do jogo, com os valores iniciais
-        jogarJogo(ubud, 10, 0);
+        jogarJogo(ubud, 3, 0);
     }
 
     public static void jogarJogo(Cidade cidadeInicial, int dinheiroInicial, int poderDaJoiaInicial) {
