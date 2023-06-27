@@ -169,8 +169,8 @@ class Main {
                     int aceitarTrocaDinheiro = dinheiro - dinheiro;
                     System.out.println("Ótimo! O poder da jóia está em " + aceitarTroca + ".");
                     System.out.println("Você agora possui " + aceitarTrocaDinheiro + " moedas.");
+                    dinheiro = 0;
                     continue;
-
                 }
                 if (mercadortroca == 2) {
                     System.out.println("Tudo bem, faça uma boa viagem!");
@@ -190,7 +190,7 @@ class Main {
                         System.out.println("Agora, vá até a cidade de Grand Duchy of Smalia\nLá, você receberá as luvas do poder!");
                         int moedasAceitarMissao = 4;
                         dinheiro = dinheiro + moedasAceitarMissao;
-                        continue;
+                        break;
                     }
                     if (aceitarMissao == 2) {
                         System.out.println("Que pena! Faça uma boa viagem.");
