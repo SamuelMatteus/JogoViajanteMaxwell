@@ -168,8 +168,9 @@ class Main {
                     int aceitarTroca = poderJoia + dinheiro;
                     int aceitarTrocaDinheiro = dinheiro - dinheiro;
                     System.out.println("Ótimo! O poder da jóia está em " + aceitarTroca + ".");
-                    System.out.println("Você agora possui" + aceitarTrocaDinheiro + " moedas.");
+                    System.out.println("Você agora possui " + aceitarTrocaDinheiro + " moedas.");
                     continue;
+
                 }
                 if (mercadortroca == 2) {
                     System.out.println("Tudo bem, faça uma boa viagem!");
