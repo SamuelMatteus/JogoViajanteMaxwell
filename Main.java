@@ -153,7 +153,7 @@ class Main {
             poderJoia += cidadeEscolhida.poderDaJoia;
             cidadesVisitadas.add(cidadeAtual);
 
-            //Confere se há missões disponíveis na cidade atual.
+            //Confere se há missões disponíveis na cidade atual e aciona as missões das cidades que possuem.
             String kalbMissao = "Kingdom Of Kalb | Poder da Jóia = +2";
             if (kalbMissao.contains(cidadeAtual.nome)) {
                 System.out.println("Temos uma missão disponível na cidade, você deseja aceitar?");
@@ -163,21 +163,67 @@ class Main {
                 int aceitarMissao = missao.nextInt();
                 if (aceitarMissao == 1) {
                     System.out.println("Por aceitar, receba essas 4 moedas!");
+                    System.out.println("Agora, vá até a cidade de Grand Duchy of Smalia\nLá, você receberá as luvas do poder!");
                     int moedasAceitarMissao = 4;
                     dinheiro = dinheiro + moedasAceitarMissao;
-                    System.out.println("Seu novo saldo é de : " + dinheiro + " moedas.");
+                    continue;
                 }
-
-                //Confere a cada viagem as alterações do poder da Jóia:
-                if (poderJoia < 0) {
-                    poderJoia = 0;
-                }
-                if (poderJoia >= 8) {
-                    System.out.println("A jóia ultrapassou o limite máximo de poder, você morreu!\n");
-                    break;
+                if (aceitarMissao == 2) {
+                    System.out.println("Que pena! Faça uma boa viagem.");
                 }
             }
-
+            String defalsiaMissao = "Defalsia | Poder da Jóia = -3";
+            if (defalsiaMissao.contains(cidadeAtual.nome)) {
+                System.out.println("Temos uma missão disponível na cidade, você deseja aceitar?");
+                System.out.println("1 - SIM");
+                System.out.println("2 - NÃO");
+                Scanner missaoDefalsia = new Scanner(System.in);
+                int aceitarMissaoDefalsia = missaoDefalsia.nextInt();
+                if (aceitarMissaoDefalsia == 1) {
+                    System.out.println("Por aceitar, receba essas 6 moedas!");
+                    System.out.println("Agora, vá até a cidade de Principality Of Kasya\nLá, você receberá as botas do poder!");
+                    int moedasAceitarMissaoDefalsia = 6;
+                    dinheiro = dinheiro + moedasAceitarMissaoDefalsia;
+                    continue;
+                }
+                if (aceitarMissaoDefalsia == 2) {System.out.println("Que pena! Faça uma boa viagem.");
+                }
+            }
+            String vuneseMissao = "Vunese Of Empire | Poder da Jóia = 0";
+            if (vuneseMissao.contains(cidadeAtual.nome)) {
+                System.out.println("Temos uma missão disponível na cidade, você deseja aceitar?");
+                System.out.println("1 - SIM");
+                System.out.println("2 - NÃO");
+                Scanner missaoVunese = new Scanner(System.in);
+                int aceitarMissaoVunese = missaoVunese.nextInt();
+                if (aceitarMissaoVunese == 1) {
+                    System.out.println("Por aceitar, receba essa moeda!");
+                    System.out.println("Agora, vá até a cidade de Ubud\nE você receberá a Glória dos Retornados!");
+                    int moedasAceitarMissaoVunese = 1;
+                    dinheiro = dinheiro + moedasAceitarMissaoVunese;
+                    continue;
+                }
+                if (aceitarMissaoVunese == 2) {
+                    System.out.println("Que pena! Faça uma boa viagem.");
+                }
+            }
+            //Confere a cada viagem as alterações do poder da Jóia:
+            if (poderJoia < 0) {
+                poderJoia = 0;
+            }
+            if (poderJoia >= 8) {
+                System.out.println("A jóia ultrapassou o limite máximo de poder, você morreu!\n");
+                break;
+            }
+            //Encerra o jogo se o usuário chegar até a cidade final.
+            String vencerJogo = "Nargumun | Poder da Jóia = 0";
+            if (vencerJogo.contains(cidadeAtual.nome)) {
+                System.out.println("Parabéns! Você chegou a Nargumun!\nA jóia foi entregue!");
+                break;
+            }
         }
+
     }
 }
+
+
