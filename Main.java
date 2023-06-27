@@ -3,7 +3,7 @@ import java.util.*;
 class Main {
     public static void main(String[] args) {
         System.out.println("\nJorat: \n\n- Olá Maxwell, seja bem vindo a essa incrível jornada! Precisamos da sua ajuda para a Jóia chegar até Nargumun!");
-        //Cria as cidades do Mapa
+        //Samuel : Cria as cidades do Mapa
         Cidade ubud = new Cidade("Ubud | Poder da Jóia = 0");
         Cidade kingdomOfLegmod = new Cidade("Kingdom Of Legmod | Poder da Jóia = +2");
         Cidade principalityOfNekikh = new Cidade("Principality Of Nekikh | Poder da Jóia = +1");
@@ -22,7 +22,7 @@ class Main {
         Cidade principalityOfKasya = new Cidade("Principality Of Kasya | Poder da Jóia = -7");
         Cidade nargumun = new Cidade("Nargumun | Poder da Jóia = 0");
 
-        // Cidades e suas fronteiras:
+        //Samuel : Cidades e suas fronteiras
         //Ubud
         ubud.adicionarLigacao(kingdomOfLegmod, 1, 2);
         ubud.adicionarLigacao(principalityOfNekikh, 1, 1);
@@ -148,12 +148,12 @@ class Main {
                 System.out.println("Fim de jogo!");
                 break;
             }
-            // Viaja entre cidades, executa o pagamento da moeda e alteração do poder da Jóia.
+            // Alexandre: Viaja entre cidades, executa o pagamento da moeda e alteração do poder da Jóia.
             cidadeAtual = cidadeEscolhida.destino;
             dinheiro -= cidadeEscolhida.moedasDeTransporte;
             poderJoia += cidadeEscolhida.poderDaJoia;
             cidadesVisitadas.add(cidadeAtual);
-            //Mercador e perguntas
+            //Alexandre: Mercador e perguntas
             System.out.println("Olá! Eu sou o mercador de " + cidadeAtual.nome + "!");
             System.out.println("Huum, posso ver que você possui " + dinheiro + " moedas de transporte.");
             System.out.println("Vi que você passou por:");
@@ -176,7 +176,7 @@ class Main {
                     break;
                 }
             }
-                //Confere se há missões disponíveis na cidade atual e aciona as missões das cidades que possuem.
+                //Alexandre: Confere se há missões disponíveis na cidade atual e aciona as missões das cidades que possuem.
                 String kalbMissao = "Kingdom Of Kalb | Poder da Jóia = +2";
                 if (kalbMissao.contains(cidadeAtual.nome)) {
                     System.out.println("Temos uma missão disponível na cidade, você deseja aceitar?");
@@ -231,7 +231,7 @@ class Main {
                         System.out.println("Que pena! Faça uma boa viagem.");
                     }
                 }
-                //Confere a cada viagem as alterações do poder da Jóia:
+                //Alexandre: Confere a cada viagem as alterações do poder da Jóia:
                 if (poderJoia < 0) {
                     poderJoia = 0;
                 }
@@ -239,7 +239,7 @@ class Main {
                     System.out.println("A jóia ultrapassou o limite máximo de poder, você morreu!\n");
                     break;
                 }
-                //Encerra o jogo se o usuário chegar até a cidade final.
+                //Alexandre: Encerra o jogo se o usuário chegar até a cidade final.
                 String vencerJogo = "Nargumun | Poder da Jóia = 0";
                 if (vencerJogo.contains(cidadeAtual.nome)) {
                     System.out.println("Parabéns! Você chegou a Nargumun!\nA jóia foi entregue!");
