@@ -243,6 +243,15 @@ class Main {
                 String vencerJogo = "Nargumun | Poder da Jóia = 0";
                 if (vencerJogo.contains(cidadeAtual.nome)) {
                     System.out.println("Parabéns! Você chegou a Nargumun!\nA jóia foi entregue!");
+                    if (dinheiro > 10){
+                        System.out.println("Maxwell é condecorado a rei! ");
+                    }
+                    if (dinheiro == 4){
+                        System.out.println("Maxwell é condecorado lorde!");
+                    }
+                    if (dinheiro < 4) {
+                        System.out.println("Maxwell é recebido como servo da coroa de Nargumun!");
+                    }
                     break;
                 }
             }
